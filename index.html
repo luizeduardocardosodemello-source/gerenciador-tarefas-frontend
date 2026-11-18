@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1f5c45"><title>Gerenciador de Tarefas</title>
+  <link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="container"><h1>Gerenciador de Tarefas</h1><p>Organize suas atividades em um só lugar</p></div></header>
+<main class="container">
+<section class="painel">
+<h2 id="titulo-formulario">Nova tarefa</h2>
+<form id="form-tarefa">
+<input type="hidden" id="tarefa-id">
+<label for="titulo">Título</label><input id="titulo" name="titulo" type="text" maxlength="100" required>
+<label for="descricao">Descrição</label><textarea id="descricao" name="descricao" maxlength="500" rows="3"></textarea>
+<label for="status">Status</label><select id="status"><option>Pendente</option><option>Em andamento</option><option>Concluída</option></select>
+<label for="prioridade">Prioridade</label><select id="prioridade"><option>Baixa</option><option selected>Média</option><option>Alta</option></select>
+<div class="acoes-formulario"><button type="submit" id="botao-salvar">Cadastrar</button><button type="button" id="botao-cancelar" class="secundario oculto">Cancelar edição</button></div>
+</form></section>
+<section class="painel">
+<div class="cabecalho-lista"><h2>Tarefas</h2><button type="button" id="botao-atualizar" class="secundario">Atualizar lista</button></div>
+<form id="form-busca" class="busca"><label for="busca-id">Buscar tarefa pelo ID</label><div class="linha-busca"><input id="busca-id" type="text" placeholder="Informe o ID da tarefa"><button type="submit">Buscar</button><button type="button" id="botao-limpar-busca" class="secundario">Listar todas</button></div></form>
+<p id="mensagem" role="status" aria-live="polite"></p><div id="lista-tarefas" class="lista-tarefas"></div>
+</section></main>
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>
